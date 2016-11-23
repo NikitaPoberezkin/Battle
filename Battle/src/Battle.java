@@ -22,7 +22,7 @@ public class Battle {
             Battle.oneRound(squad1,squad2);
             System.out.println("\n"+squad1.toString()+squad2.toString());
             dateHelper.skipTime();
-            if (squad2.hasAliveWarriors() == false){
+            if (squad2.hasAliveWarriors()/* == false не нужно*/){
                 System.out.println("\n"+squad1.getName() + " победили, время сражения: " + dateHelper.getFormattedDiff());
                 break;
             }
@@ -43,7 +43,7 @@ public class Battle {
         Squad squad = new Squad(squads_names[rand.nextInt(squads_names.length)]); // Создание 1 отряда со случайным именем из массива squad_names
         Warrior[] warriors_squad1 = new Warrior[squad.getWarriors().length];
         for (int i=0; i<warriors_squad1.length; i++){
-            switch (rand.nextInt(3)+1){
+            switch (rand.nextInt(3)+1 /*магические числа сразу бросаются в глаза. почему именно 3+1?*/){
                 case 1: warriors_squad1[i] = new Warlock(warriors_names[rand.nextInt(warriors_names.length)], squad); // Добавление в отряд бойца со случайным именем из массива warriors_names
                     break;
                 case 2: warriors_squad1[i] = new Archer(warriors_names[rand.nextInt(warriors_names.length)], squad);

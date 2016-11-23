@@ -7,7 +7,7 @@ public class Squad implements Cloneable {
     private Warrior[] warriors;
     private String name;
 
-    public void AddWarrior(Warrior warrior, int i){
+    public void AddWarrior(Warrior warrior, int i){ //нигде не используется и с прописной буквы...
         warriors[i]=warrior;
     }
 
@@ -51,7 +51,7 @@ public class Squad implements Cloneable {
         }
         return "Отряд " + this.name +"\n" + string;
     }
-
+//  нужна аннотация, +можно вернуть сразу Squad, а не  Object
     public Object clone(){
         try{
             Squad squad = (Squad) super.clone();
